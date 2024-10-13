@@ -96,6 +96,16 @@ a {
     font-size: 11px;
 }
 
+.myself-img {
+    width: 100;
+    max-width: 200px;
+    aspect-ratio: 3/4;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+}
+
 .responsive-img {
     width: 100%; 
     height: auto;
@@ -130,7 +140,8 @@ label {
 
 /* Input Field Styles */
 input[type="text"], 
-input[type="NIM"], 
+input[type="date"], 
+input[type="email"], 
 input[type="tel"] {
     width: 100%;
     padding: 12px;
@@ -141,7 +152,8 @@ input[type="tel"] {
 }
 
 input[type="text"]:focus,
-input[type="NIM"]:focus, 
+input[type="date"]:focus,
+input[type="email"]:focus, 
 input[type="tel"]:focus {
     border-color: #ebdfe1;
     outline: none;
@@ -203,6 +215,30 @@ input[type="tel"]:focus {
     vertical-align: middle;
     margin-left: 10px;
 }
+
+.gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto; 
+    padding: 20px 10px;
+}
+
+.gallery img {
+    width: 100%;
+    max-width: 350px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  .gallery::after {
+    content: "";
+    width: 350px;
+  }  
 
 /* styling for a mobile phones sizes */
 @media only screen and (min-width: 700px) {
