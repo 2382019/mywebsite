@@ -69,6 +69,8 @@ a {
 .main {
     background-color: rgb(248, 248, 248);
     padding: 15px;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .aside {
@@ -130,6 +132,13 @@ a {
 
 .rForm-group {
     margin-bottom: 20px;
+}
+
+.rForm-group input, .rForm-group textarea {
+    width: 100%; /* atur lebar input dan textarea untuk memenuhi form group */
+    padding: 10px; /* atur padding untuk membuat jarak antara input dan border */
+    border: 1px solid #ccc; /* atur border untuk membuat garis di sekitar input */
+    border-radius: 5px; /* atur border radius untuk membuat sudut input menjadi lebih halus */
 }
 
 label {
@@ -240,6 +249,18 @@ input[type="tel"]:focus {
     content: "";
     width: 350px;
   }  
+
+@media only screen and (max-width: 768px) {
+    .main {
+        max-width: 600px; /* atur lebar maksimum untuk tampilan mobile */
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .main {
+        max-width: 400px; /* atur lebar maksimum untuk tampilan mobile kecil */
+    }
+}
 
 /* styling for a mobile phones sizes */
 @media only screen and (min-width: 700px) {
