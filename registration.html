@@ -4,6 +4,56 @@
     <meta name="viewport" content="width=device-width, initial-scal=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="newicon.png" type="image/x-icon">
+    <script>
+        function validateForm(event) {
+            event.preventDefault();
+            let isValid = true;
+
+            // Clear previous error messages
+            document.getElementById('nameError').textContent = '';
+            document.getElementById('phoneNumberError').textContent = '';
+            document.getElementById('emailError').textContent = '';
+            document.getElementById('passwordError').textContent = '';
+
+            // Validate Name
+            const name = document.getElementById('text').value.trim();
+            if (name.length === 0 || name.length > 40) {
+                document.getElementById('nameError').textContent = 'Name is required and must be less than 40 characters.';
+                isValid = false;
+            }
+
+            // Validate Phone Number
+            const phoneNumber = document.getElementById('phoneNumber').value;
+            const phonePattern = /^[0-9]{1,15}$/;
+            if (!phonePattern.test(phoneNumber)) {
+                document.getElementById('phoneNumberError').textContent = 'Phone number must be numeric and up to 15 digits.';
+                isValid = false;
+            }
+
+            // Validate Email
+            const email = document.getElementById('email').value;
+            const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!emailPattern.test(email)) {
+                document.getElementById('emailError').textContent = 'Please enter a valid email address.';
+                isValid = false;
+            }
+
+            // Validate Password
+            const password = document.getElementById('password').value;
+            const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[A-Za-z0-9]{8,16}$/;
+            if (!passwordPattern.test(password)) {
+                document.getElementById('passwordError').textContent = 'Password must be 8-16 characters long, contain at least 1 uppercase letter, 1 lowercase letter, and 1 number. No symbols allowed.';
+                isValid = false;
+            }
+
+            // If all validations pass, submit the form
+            if (isValid) {
+                event.preventDefault();
+            } else {
+                alert("Registration Successful");
+            }
+        }
+    </script>
 <body>
     <div class="header">
         <h1>Registration Form</h1>
@@ -25,12 +75,12 @@
             <form action="process.php" method="POST">
                 <div class="rForm-group">
                     <label for="nama">Name:</label>
-                    <textarea id="text" name="nama" rows="4" cols="50" maxlength="40 required"></textarea>
+                    <textarea id="text" name="nama" rows="4" cols="50" maxlength="40" required></textarea>
                     <span class="error" id="nameError"></span>
                 </div>
                 <div class="rForm-group">
                     <label for="phoneNumber">Phone Number:</label>
-                    <input type="tel" id="phoneNumber" name="phoneNumber" required>
+                    <input type="tel" id="phoneNumber" name="phoneNumber" pattern="[0-9]{1,15}" maxlength="15" required>
                     <span class="error" id="phoneNumberError"></span>
                 </div>
                 <div class="rForm-group">
@@ -43,7 +93,7 @@
                 </div>
 
                 <div class="rForm-group">
-                    <button type="submit" class="btn-submit"><b>Register</b></button>
+                    <button type="submit" class="btn-submit">Register</button>
                 </div>
             </form>
         </div>
