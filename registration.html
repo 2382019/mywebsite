@@ -14,7 +14,8 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Me</a></li>
-                <li><a href="myHoliday.html">My Holiday</a></li>
+                <li><a href="myGallery.html">My Gallery</a></li>
+                <li><a href="calculatorpage.html">Calculator</a></li>
                 <li><a href="registration.html">Registration Form</a></li>
             </ul>
         </div>
@@ -23,33 +24,24 @@
             <h2>Registration Form</h2>
             <form action="process.php" method="POST">
                 <div class="rForm-group">
-                    <label for="nama">Full Name</label>
-                    <input type="text" id="nama" name="nama" required>
-                </div>
-                <div class="rForm-group">
-                    <label for="birthDate">Birth Date:</label>
-                    <input type="date" id="birthDate" name="birthDate" required>
+                    <label for="nama">Name:</label>
+                    <textarea id="text" name="nama" rows="4" cols="50" maxlength="40 required"></textarea>
+                    <span class="error" id="nameError"></span>
                 </div>
                 <div class="rForm-group">
                     <label for="phoneNumber">Phone Number:</label>
                     <input type="tel" id="phoneNumber" name="phoneNumber" required>
+                    <span class="error" id="phoneNumberError"></span>
                 </div>
                 <div class="rForm-group">
                     <label for="email">Email:</label>
                     <input type="email" id="email" name="email" required>
                 </div>
                 <div class="rForm-group">
-                    <label for="address">Address:</label>
-                    <textarea id="address" name="address" rows="4" cols="50" required></textarea>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
                 </div>
-                <div class="rForm-group">
-                    <label for="town">Town:</label>
-                    <input type="text" id="town" name="town" required>
-                </div>
-                <div class="rForm-group">
-                    <label for="zipCode">Zip Code:</label>
-                    <input type="text" id="zipCode" name="zipCode" required>
-                </div>
+
                 <div class="rForm-group">
                     <button type="submit" class="btn-submit"><b>Register</b></button>
                 </div>

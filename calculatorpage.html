@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scal=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="newicon.png" type="image/x-icon">
+<body>
+    <div class="header">
+        <h1>A Simple Calculator</h1>
+    </div>
+
+    <div class="container">
+        <div class="menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="myGallery.html">My Gallery</a></li>
+                <li><a href="calculatorpage.html">Calculator</a></li>
+                <li><a href="registration.html">Registration Form</a></li>
+            </ul>
+        </div>
+
+        <div class ="main">
+            <div class="calculator">
+            <p id="display">0</p>
+
+        <button onclick="press('7')">7</button>
+        <button onclick="press('8')">8</button>
+        <button onclick="press('9')">9</button>
+        <button onclick="press('/')">/</button>
+
+        <button onclick="press('4')">4</button>
+        <button onclick="press('5')">5</button>
+        <button onclick="press('6')">6</button>
+        <button onclick="press('*')">×</button>
+
+        <button onclick="press('1')">1</button>
+        <button onclick="press('2')">2</button>
+        <button onclick="press('3')">3</button>
+        <button onclick="press('-')">-</button>
+
+        <button onclick="press('0')">0</button>
+        <button onclick="press('.')">.</button>
+        <button onclick="clearDisplay()">C</button>
+        <button onclick="press('+')">+</button>
+
+        <button class="span-2" onclick="calculate()">=</button>
+    </div>
+
+    <script>
+        let expression = '';
+
+        function press(value) {
+            if (value === '.' && expression.split(/[-+*/]/).pop().includes('.')) {
+                return;
+            }
+            
+            if (['+', '-', '*', '/'].includes(value)) {
+                if (['+', '-', '*', '/'].includes(expression.slice(-1))) {
+                    expression = expression.slice(0, -1) + value;
+                } else {
+                    expression += value;
+                }
+            } else {
+                expression += value;
+            }
+            updateDisplay();
+        }
+
+        function calculate() {
+            try {
+                if (['+', '-', '*', '/'].includes(expression.slice(-1))) {
+                    expression = expression.slice(0, -1);
+                }
+                
+                let result = eval(expression);
+                
+                if (!isFinite(result)) {
+                    throw new Error('Invalid calculation');
+                }
+                
+                result = Math.round(result * 1000000) / 1000000;
+                
+                expression = result.toString();
+                updateDisplay();
+            } catch (error) {
+                expression = '';
+                updateDisplay();
+                alert('Invalid Expression!');
+            }
+        }
+
+        function clearDisplay() {
+            expression = '';
+            updateDisplay();
+        }
+
+        function updateDisplay() {
+            document.getElementById("display").innerText = expression || '0';
+        }
+        </script>
+        </div>
+
+        <div class="aside">
+            <h2>Me</h2>
+            <p>
+                I'm Gisella Mercy Wawountu <br>
+                A 2nd year Information System Student
+            </p>
+            <img src="doggy.png" alt="doggy icon" class="responsive-img">
+        </div>
+
+        <div class="footer">
+            <p>
+                ps: please try resize the browser :)
+            </p>
+        </div>
+    </div>
+</body>
+
+</head>
+</html>
