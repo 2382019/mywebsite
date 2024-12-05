@@ -1,51 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scal=1.0">
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" href="newicon.png" type="image/x-icon">
-<body>
-    <div class="header">
-        <h1>Welcome!</h1>
+</head>
+<body class="font-sans m-0 p-0 leading-relaxed">
+    <div class="bg-[#530c18] text-white p-12 text-center">
+        <h1 class="text-4xl">Personal Website</h1>
     </div>
 
-    <div class="container">
-        <div class="menu">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Me</a></li>
-                <li><a href="myGallery.html">My Gallery</a></li>
-                <li><a href="calculatorpage.html">Calculator</a></li>
-                <li><a href="registration.html">Registration Form</a></li>
+    <!-- Main Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-[2fr_3fr_2fr] gap-6 p-6 max-w-7xl mx-auto">
+        <div class="bg-[#31634b] p-4 rounded">
+            <ul class="list-none p-0 m-0">
+                <li class="mb-2">
+                    <a href="index.html" class="block p-2 text-center bg-[#FAFCFB] text-black rounded shadow hover:bg-[#3d6e56]">Home</a>
+                </li>
+                <li class="mb-2">
+                    <a href="about.html" class="block p-2 text-center bg-[#FAFCFB] text-black rounded shadow hover:bg-[#3d6e56]">About Me</a>
+                </li>
+                <li class="mb-2">
+                    <a href="myGallery.html" class="block p-2 text-center bg-[#FAFCFB] text-black rounded shadow hover:bg-[#3d6e56]">My Gallery</a>
+                </li>
+                <li class="mb-2">
+                    <a href="calculatorpage.html" class="block p-2 text-center bg-[#FAFCFB] text-black rounded shadow hover:bg-[#3d6e56]">Calculator</a>
+                </li>
+                <li class="mb-2">
+                    <a href="registration.html" class="block p-2 text-center bg-[#FAFCFB] text-black rounded shadow hover:bg-[#3d6e56]">Registration Form</a>
+                </li>
             </ul>
         </div>
 
-        <div class ="main">
-            <h2>Hello There!</h2>
-            <img src="gisellphoto.jpeg" alt="My Image" class="responsive-img">
-            <p>
-                Hello there, Welcome to my humble website,<br>
-                Please do understand this website was created as a portofolio<br>
-                of a responsive Website.
-            </p>
+        <!-- Main Content -->
+        <div class="bg-white p-6 rounded shadow-lg">
+            <h3 class="text-2xl font-bold text-center mb-4">Hello There!</h3>
+            <div class="flex flex-col items-center">
+                <img src="menew.jpeg" alt="My Image" class="w-[400px] h-[400px] rounded-[10%] border-4 border-gray-300 object-cover">
+                <p class="mt-6 text-center text-gray-600">
+                    I'm Gisella, a UI/UX designer. 
+                    My focus is on creating intuitive and visually appealing interfaces. <br>
+                </p>
+            </div>
         </div>
 
-        <div class="aside">
-            <h2>Me</h2>
+        <!-- Right Sidebar -->
+        <div class="bg-[#31634b] text-white p-4 rounded shadow flex flex-col items-center justify-center text-center h-full">
             <p>
-                I'm Gisella Mercy Wawountu <br>
-                A 2nd year Information System Student
+                 <i>I aim to bridge the gap between aesthetics and usability in every design</i>
             </p>
-            <img src="doggy.png" alt="doggy icon" class="responsive-img">
-        </div>
-
-        <div class="footer">
-            <p>
-                ps: please try resize the browser :)
-            </p>
-        </div>
+            <img src="card_element.png" alt="doggy icon" class="responsive-img mx-auto">
+        </div>        
     </div>
-</body>
 
-</head>
+    <!-- Footer -->
+    <footer class="bg-[#530c18] text-white text-center py-4">
+        <p>&copy; 2024 Gisella Mercy Waworuntu. All rights reserved.</p>
+      </footer>
+</body>
 </html>

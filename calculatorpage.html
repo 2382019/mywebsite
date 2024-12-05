@@ -1,122 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scal=1.0">
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" href="newicon.png" type="image/x-icon">
-<body>
-    <div class="header">
-        <h1>A Simple Calculator</h1>
+</head>
+<body class="font-sans m-0 p-0 leading-relaxed bg-gray-100">
+    <div class="bg-[#530c18] text-white p-12 text-center">
+        <h1 class="text-4xl">A Simple Calculator</h1>
     </div>
 
-    <div class="container">
-        <div class="menu">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Me</a></li>
-                <li><a href="myGallery.html">My Gallery</a></li>
-                <li><a href="calculatorpage.html">Calculator</a></li>
-                <li><a href="registration.html">Registration Form</a></li>
+    <!-- Main Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-[2fr_3fr_2fr] gap-6 p-6 max-w-7xl mx-auto">
+        <div class="bg-[#31634b] p-4 rounded shadow">
+            <ul class="list-none p-0 m-0">
+                <li class="mb-2">
+                    <a href="index.html" class="block p-2 text-center bg-[#FAFCFB] text-black rounded shadow hover:bg-[#3d6e56]">Home</a>
+                </li>
+                <li class="mb-2">
+                    <a href="about.html" class="block p-2 text-center bg-[#FAFCFB] text-black rounded shadow hover:bg-[#3d6e56]">About Me</a>
+                </li>
+                <li class="mb-2">
+                    <a href="myGallery.html" class="block p-2 text-center bg-[#FAFCFB] text-black rounded shadow hover:bg-[#3d6e56]">My Gallery</a>
+                </li>
+                <li class="mb-2">
+                    <a href="calculatorpage.html" class="block p-2 text-center bg-[#FAFCFB] text-black rounded shadow hover:bg-[#3d6e56]">Calculator</a>
+                </li>
+                <li class="mb-2">
+                    <a href="registration.html" class="block p-2 text-center bg-[#FAFCFB] text-black rounded shadow hover:bg-[#3d6e56]">Registration Form</a>
+                </li>
             </ul>
         </div>
 
-        <div class ="main">
-            <div class="calculator">
-            <p id="display">0</p>
-
-        <button onclick="press('7')">7</button>
-        <button onclick="press('8')">8</button>
-        <button onclick="press('9')">9</button>
-        <button onclick="press('/')">/</button>
-
-        <button onclick="press('4')">4</button>
-        <button onclick="press('5')">5</button>
-        <button onclick="press('6')">6</button>
-        <button onclick="press('*')">×</button>
-
-        <button onclick="press('1')">1</button>
-        <button onclick="press('2')">2</button>
-        <button onclick="press('3')">3</button>
-        <button onclick="press('-')">-</button>
-
-        <button onclick="press('0')">0</button>
-        <button onclick="press('.')">.</button>
-        <button onclick="clearDisplay()">C</button>
-        <button onclick="press('+')">+</button>
-
-        <button class="span-2" onclick="calculate()">=</button>
-    </div>
-
-    <script>
-        let expression = '';
-
-        function press(value) {
-            if (value === '.' && expression.split(/[-+*/]/).pop().includes('.')) {
-                return;
-            }
+        <!-- Calculator -->
+        <div class="calculator mx-auto max-w-md p-5 bg-white border-4 border-[#530c18] rounded shadow-lg">
+            <div id="display" class="text-right text-[1.5rem] min-h-[50px] p-[15px] border border-gray-400 rounded-md bg-gray-100 text-[#48525C] font-mono">
+            </div>
             
-            if (['+', '-', '*', '/'].includes(value)) {
-                if (['+', '-', '*', '/'].includes(expression.slice(-1))) {
-                    expression = expression.slice(0, -1) + value;
-                } else {
-                    expression += value;
-                }
+            <!-- Buttons -->
+            <div class="grid grid-cols-4 gap-4 mt-4">
+                <button onclick="press('7')" class="btn">7</button>
+                <button onclick="press('8')" class="btn">8</button>
+                <button onclick="press('9')" class="btn">9</button>
+                <button onclick="press('/')" class="btn">/</button>
+
+                <button onclick="press('4')" class="btn">4</button>
+                <button onclick="press('5')" class="btn">5</button>
+                <button onclick="press('6')" class="btn">6</button>
+                <button onclick="press('*')" class="btn">×</button>
+
+                <button onclick="press('1')" class="btn">1</button>
+                <button onclick="press('2')" class="btn">2</button>
+                <button onclick="press('3')" class="btn">3</button>
+                <button onclick="press('-')" class="btn">-</button>
+
+                <button onclick="press('0')" class="btn">0</button>
+                <button onclick="press('.')" class="btn">.</button>
+                <button onclick="clearDisplay()" class="btn">C</button>
+                <button onclick="press('+')" class="btn">+</button>
+
+                <button onclick="calculate()" class="btn col-span-4 bg-[#31634b] text-white hover:bg-[#25563a]">=</button>
+            </div>
+        </div>
+
+        <!-- Right Sidebar -->
+        <div class="bg-[#31634b] text-white p-4 rounded shadow flex flex-col items-center justify-center text-center">
+            <img src="mathjoke.png" alt="doggy icon" class="w-32 h-32 mx-auto mt-4">
+            <p class="mt-7">
+                please don't ask me about math,<br>
+                just use this calculator
+            </p>
+        </aside>
+    </div>
+    </div>
+    <!-- Footer -->
+    <footer class="bg-[#530c18] text-white text-center py-4">
+        <p>&copy; 2024 Gisella Mercy Waworuntu. All rights reserved.</p>
+      </footer>
+
+<script>
+    let expression = '';
+
+    function press(value) {
+        if (value === '.' && expression.split(/[-+*/]/).pop().includes('.')) {
+            return;
+        }
+
+        if (['+', '-', '*', '/'].includes(value)) {
+            if (['+', '-', '*', '/'].includes(expression.slice(-1))) {
+                expression = expression.slice(0, -1) + value;
             } else {
                 expression += value;
             }
-            updateDisplay();
+        } else {
+            expression += value;
         }
+        updateDisplay();
+    }
 
-        function calculate() {
-            try {
-                if (['+', '-', '*', '/'].includes(expression.slice(-1))) {
-                    expression = expression.slice(0, -1);
-                }
-                
-                let result = eval(expression);
-                
-                if (!isFinite(result)) {
-                    throw new Error('Invalid calculation');
-                }
-                
-                result = Math.round(result * 1000000) / 1000000;
-                
-                expression = result.toString();
-                updateDisplay();
-            } catch (error) {
-                expression = '';
-                updateDisplay();
-                alert('Invalid Expression!');
+    function calculate() {
+        try {
+            if (['+', '-', '*', '/'].includes(expression.slice(-1))) {
+                expression = expression.slice(0, -1);
             }
-        }
 
-        function clearDisplay() {
+            let result = eval(expression);
+
+            if (!isFinite(result)) {
+                throw new Error('Invalid calculation');
+            }
+
+            result = Math.round(result * 1000000) / 1000000;
+
+            expression = result.toString();
+            updateDisplay();
+        } catch (error) {
             expression = '';
             updateDisplay();
+            alert('Invalid Expression!');
         }
+    }
 
-        function updateDisplay() {
-            document.getElementById("display").innerText = expression || '0';
-        }
-        </script>
-        </div>
+    function clearDisplay() {
+        expression = '';
+        updateDisplay();
+    }
 
-        <div class="aside">
-            <h2>Me</h2>
-            <p>
-                I'm Gisella Mercy Wawountu <br>
-                A 2nd year Information System Student
-            </p>
-            <img src="doggy.png" alt="doggy icon" class="responsive-img">
-        </div>
+    function updateDisplay() {
+        document.getElementById("display").innerText = expression || '0';
+    }
+</script>
 
-        <div class="footer">
-            <p>
-                ps: please try resize the browser :)
-            </p>
-        </div>
-    </div>
+<style>
+    .btn {
+        padding: 1rem;
+        font-size: 1.2rem;
+        font-family: 'Impact', sans-serif;
+        text-align: center;
+        cursor: pointer;
+        border: 1px solid #161515;
+        border-radius: 5px;
+        background-color: white;
+        color: #48525C;
+        transition: background-color 0.2s;
+    }
+
+    .btn:hover {
+        background-color: #e2e2e2;
+    }
+</style>
 </body>
-
-</head>
 </html>

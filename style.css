@@ -17,8 +17,8 @@ body {
 
 /* use . to refer to a class */
 .header {
-    background-color: #ebdfe1;
-    color: black;
+    background-color: #530c18;
+    color: rgb(255, 255, 255);
     padding: 15px;
     text-align: center;
 }
@@ -42,7 +42,7 @@ a {
 }
 
 .menu {
-    background-color: #d0e1e8;
+    background-color: #31634b;
     padding: 15px;
 }
 
@@ -63,18 +63,18 @@ a {
 }
 
 .menu li:hover{
-    background-color: #d0e1e8;
+    background-color: #3d6e56;
 }
 
 .main {
-    background-color: rgb(248, 248, 248);
+    background-color: #ffffff;
     padding: 15px;
     max-width: 800px;
     margin: 0 auto;
 }
 
 .aside {
-    background-color: #b7CEDE;
+    background-color: #31634b;
     color: white; 
     padding: 15px;
     text-align: center;
@@ -83,10 +83,10 @@ a {
 }
 
 .doggy-img {
-        width: 20px; /* ubah ukuran gambar menjadi 20px */
-        height: 20px; /* ubah ukuran gambar menjadi 20px */
-        margin-right: 10px; /* tambahkan jarak antara gambar dan tulisan Welcome */
-        vertical-align: middle; /* atur posisi gambar agar berada di tengah */
+        width: 20px; 
+        height: 20px;
+        margin-right: 10px; 
+        vertical-align: middle; 
 }
 
 /* styling for the footer secrion */
@@ -99,19 +99,22 @@ a {
 }
 
 .myself-img {
-    width: 100;
-    max-width: 200px;
-    aspect-ratio: 3/4;
-    height: auto;
-    border-radius: 10px;
-    display: block;
+    width: 220px; 
+    height: 300px; 
+    border-radius: 47%;
+    border: 5px;
+    overflow: hidden;
+    object-fit: cover; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 0 auto;
 }
 
 .responsive-img {
     width: 100%; 
     height: auto;
-    max-width: 100%;
+    max-width: 50%;
     border-radius: 10px;
 }
 
@@ -193,7 +196,7 @@ input[type="password"]:focus {
 }
 
 .asideRN {
-    background-color: #b7CEDE;
+    background-color: #31634b;
     color: rgb(102, 93, 93); 
     padding: 15px;
     text-align: center;
@@ -286,7 +289,7 @@ input[type="password"]:focus {
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     padding: 20px;
-    border: 5px solid #d0e1e8;
+    border: 5px solid #530c18;
     background-color: white;
     box-shadow: 0px 4px 8px whitesmoke;
 }

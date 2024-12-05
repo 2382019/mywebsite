@@ -1,56 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scal=1.0">
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" href="newicon.png" type="image/x-icon">
-
-<body>
-    <div class="header">
-        <h1>My Gallery</h1>
+</head>
+<body class="font-sans m-0 p-0 leading-relaxed">
+    <div class="bg-[#530c18] text-white p-12 text-center">
+        <h1 class="text-4xl">My Gallery</h1>
     </div>
 
-    <div class="container">
-        <div class="menu">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Me</a></li>
-                <li><a href="myGallery.html">My Gallery</a></li>
-                <li><a href="calculatorpage.html">Calculator</a></li>
-                <li><a href="registration.html">Registration Form</a></li>
+    <!-- Main Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-[2fr_3fr_2fr] gap-6 p-6 max-w-7xl mx-auto">
+        <div class="bg-[#31634b] p-4 rounded shadow">
+            <ul class="list-none p-0 m-0">
+                <li class="mb-2">
+                    <a href="index.html" class="block p-2 text-center bg-[#FAFCFB] text-black rounded shadow hover:bg-[#3d6e56]">Home</a>
+                </li>
+                <li class="mb-2">
+                    <a href="about.html" class="block p-2 text-center bg-[#FAFCFB] text-black rounded shadow hover:bg-[#3d6e56]">About Me</a>
+                </li>
+                <li class="mb-2">
+                    <a href="myGallery.html" class="block p-2 text-center bg-[#FAFCFB] text-black rounded shadow hover:bg-[#3d6e56]">My Gallery</a>
+                </li>
+                <li class="mb-2">
+                    <a href="calculatorpage.html" class="block p-2 text-center bg-[#FAFCFB] text-black rounded shadow hover:bg-[#3d6e56]">Calculator</a>
+                </li>
+                <li class="mb-2">
+                    <a href="registration.html" class="block p-2 text-center bg-[#FAFCFB] text-black rounded shadow hover:bg-[#3d6e56]">Registration Form</a>
+                </li>
             </ul>
         </div>
 
-        <div class ="main">
-            <div class="gallery">
-                <img src="holiday1.jpeg" alt="erika and friends">
-                <img src="holiday2.jpeg" alt="durian">
-                <img src="holiday3.jpeg" alt="dinner">
-                <img src="holiday4.jpeg" alt="GBK">
-                <img src="holiday5.jpeg" alt="badminton">
-                <img src="holiday6.jpeg" alt="independence day">
-                <img src="holiday7.jpeg" alt="my dog">
-                <img src="retreat.jpg" alt="retreat gereja">
-                <img src="PAG WIL 11.jpeg" alt="Pemuda Advent Gabungan">
-                <img src="Puppies.jpeg" alt="my new Puppies">
+        <!-- Main Content -->
+        <div class="main mx-auto max-w-full p-4 bg-white rounded shadow">
+            <div class="gallery grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <figure class="text-center">
+                    <img src="job1.jpg" alt="Work from Cafe" class="w-full h-[300px] object-cover rounded-lg">
+                    <figcaption class="mt-2 text-gray-600">Finding inspiration and productivity in cozy spaces</figcaption>
+                </figure>
+                <figure class="text-center">
+                    <img src="job2.jpg" alt="Team Collaboration" class="w-full h-[300px] object-cover rounded-lg">
+                    <figcaption class="mt-2 text-gray-600">Brainstorming and wireframing ideas with the team</figcaption>
+                </figure>
+                <figure class="text-center">
+                    <img src="job3.jpg" alt="Creative Workspace" class="w-full h-[300px] object-cover rounded-lg">
+                    <figcaption class="mt-2 text-gray-600">Crafting high-fidelity designs and prototyping solutions to bring ideas to life</figcaption>
+                </figure>
+                <figure class="text-center">
+                    <img src="job4.jpg" alt="Brainstorming Session" class="w-full h-[300px] object-cover rounded-lg">
+                    <figcaption class="mt-2 text-gray-600">Iterating on user interface designs to deliver intuitive and visually engaging solutions</figcaption>
+                </figure>
+                <figure class="text-center">
+                    <img src="job5.jpg" alt="Focus Time" class="w-full h-[300px] object-cover rounded-lg">
+                    <figcaption class="mt-2 text-gray-600">Testing and refining mobile app designs</figcaption>
+                </figure>
+                <figure class="text-center">
+                    <img src="job6.jpg" alt="Outdoor Office" class="w-full h-[300px] object-cover rounded-lg">
+                    <figcaption class="mt-2 text-gray-600">Designing in dynamic environments – balancing creativity and functionality</figcaption>
+                </figure>
+                <figure class="text-center">
+                    <img src="job7.jpg" alt="Modern Workspace" class="w-full h-[300px] object-cover rounded-lg">
+                    <figcaption class="mt-2 text-gray-600">Turning ideas into structured layouts</figcaption>
+                </figure>
+                <figure class="text-center">
+                    <img src="job8.jpg" alt="Casual Meeting" class="w-full h-[300px] object-cover rounded-lg">
+                    <figcaption class="mt-2 text-gray-600">Delivering vibrant and user-friendly interfaces</figcaption>
+                </figure>
+                <figure class="text-center">
+                    <img src="job9.jpg" alt="Team Celebration" class="w-full h-[300px] object-cover rounded-lg">
+                    <figcaption class="mt-2 text-gray-600">Creating a seamless e-commerce experience</figcaption>
+                </figure>
+                <figure class="text-center">
+                    <img src="job10.jpg" alt="End of Day Reflections" class="w-full h-[300px] object-cover rounded-lg">
+                    <figcaption class="mt-2 text-gray-600">Designing comprehensive user flows</figcaption>
+                </figure>
             </div>
         </div>
+                    
 
-        <div class="aside">
-            <br><br><br><br><br><br><br><br>
-            <img src="doggy2.png" alt="doggy christmas icon" class="responsive-img">
-            <p>pov: waiting for the next holiday</p>
-
-        </div>
-        
-        <div class="footer">
-            <p>
-                ps: please try resize the browser :)
-            </p>
+        <!-- Right Sidebar -->
+        <div class="bg-[#31634b] text-white p-4 text-center rounded shadow">
+            <div class="responsive-img">
+                <img src="file.png" alt="file icon" class="w-40 h-40 mx-auto rounded-full">
+            </div>
+            <p class="mt-7">"Good UI/UX design not only enhances the visual appeal of a product but also ensures a seamless, intuitive experience, empowering users to engage effortlessly while achieving their goals"</p>
         </div>
     </div>
-</body>
 
-</head>
+        <!-- Footer -->
+        <footer class="bg-[#530c18] text-white text-center py-4">
+            <p>&copy; 2024 Gisella Mercy Waworuntu. All rights reserved.</p>
+          </footer>
+</body>
 </html>

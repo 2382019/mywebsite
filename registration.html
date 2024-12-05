@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scal=1.0">
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" href="newicon.png" type="image/x-icon">
     <script>
         function validateForm(event) {
@@ -48,92 +48,85 @@
 
             // If all validations pass, submit the form
             if (isValid) {
-                event.preventDefault();
-            } else {
                 alert("Registration Successful");
             }
         }
     </script>
-<body>
-    <div class="header">
-        <h1>Registration Form</h1>
+</head>
+<body class="font-sans m-0 p-0 leading-relaxed">
+    <div class="bg-[#530c18] text-white p-12 text-center">
+        <h1 class="text-4xl">Registration Form</h1>
     </div>
 
-    <div class="container">
-        <div class="menu">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Me</a></li>
-                <li><a href="myGallery.html">My Gallery</a></li>
-                <li><a href="calculatorpage.html">Calculator</a></li>
-                <li><a href="registration.html">Registration Form</a></li>
+    <!-- Main Container -->
+    <div class="grid grid-cols-1 lg:grid-cols-[2fr_3fr_2fr] gap-6 p-6 max-w-7xl mx-auto">
+        <div class="bg-[#31634b] p-4 rounded shadow">
+            <ul class="list-none p-0 m-0">
+                <li class="mb-2">
+                    <a href="index.html" class="block p-2 text-center bg-[#FAFCFB] text-black rounded shadow hover:bg-[#3d6e56]">Home</a>
+                </li>
+                <li class="mb-2">
+                    <a href="about.html" class="block p-2 text-center bg-[#FAFCFB] text-black rounded shadow hover:bg-[#3d6e56]">About Me</a>
+                </li>
+                <li class="mb-2">
+                    <a href="myGallery.html" class="block p-2 text-center bg-[#FAFCFB] text-black rounded shadow hover:bg-[#3d6e56]">My Gallery</a>
+                </li>
+                <li class="mb-2">
+                    <a href="calculatorpage.html" class="block p-2 text-center bg-[#FAFCFB] text-black rounded shadow hover:bg-[#3d6e56]">Calculator</a>
+                </li>
+                <li class="mb-2">
+                    <a href="registration.html" class="block p-2 text-center bg-[#FAFCFB] text-black rounded shadow hover:bg-[#3d6e56]">Registration Form</a>
+                </li>
             </ul>
         </div>
 
-        <div class ="main">
-            <h2>Registration Form</h2>
-            <form action="process.php" method="POST">
-                <div class="rForm-group">
-                    <label for="nama">Name:</label>
-                    <textarea id="text" name="nama" rows="4" cols="50" maxlength="40" required></textarea>
-                    <span class="error" id="nameError"></span>
+        <!-- Main Content Section -->
+        <div class="bg-white p-10 rounded shadow">
+            <h2 class="text-3xl text-center text-black mb-6">Registration Form</h2>
+            <form onsubmit="validateForm(event)">
+                <div class="rForm-group mb-4">
+                    <label for="nama" class="block text-gray-600 mb-2">Name:</label>
+                    <input type="text" id="text" name="nama" maxlength="40" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    <span class="error text-red-500 text-sm" id="nameError"></span>
                 </div>
-                <div class="rForm-group">
-                    <label for="phoneNumber">Phone Number:</label>
-                    <input type="tel" id="phoneNumber" name="phoneNumber" pattern="[0-9]{1,15}" maxlength="15" required>
-                    <span class="error" id="phoneNumberError"></span>
+
+                <div class="rForm-group mb-4">
+                    <label for="phoneNumber" class="block text-gray-600 mb-2">Phone Number:</label>
+                    <input type="tel" id="phoneNumber" name="phoneNumber" pattern="[0-9]{1,15}" maxlength="15" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    <span class="error text-red-500 text-sm" id="phoneNumberError"></span>
                 </div>
-                <div class="rForm-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
+
+                <div class="rForm-group mb-4">
+                    <label for="email" class="block text-gray-600 mb-2">Email:</label>
+                    <input type="email" id="email" name="email" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    <span class="error text-red-500 text-sm" id="emailError"></span>
                 </div>
-                <div class="rForm-group">
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" name="password" required>
+
+                <div class="rForm-group mb-6">
+                    <label for="password" class="block text-gray-600 mb-2">Password:</label>
+                    <input type="password" id="password" name="password" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    <span class="error text-red-500 text-sm" id="passwordError"></span>
                 </div>
 
                 <div class="rForm-group">
-                    <button type="submit" class="btn-submit">Register</button>
+                    <button type="submit" class="w-full p-3 bg-[#ebdfe1] text-black rounded-md cursor-pointer hover:bg-[#d1c7b7] transition duration-300">Register</button>
                 </div>
             </form>
         </div>
 
-        <div class="asideRN">
-            <div class="content-box">
-            <h3>Social Media</h3>
-                <img src="Instagram_icon.png.webp" width="30" height="30" alt="Instagram Logo">
-                <a href="https://www.instagram.com/gisellamercy/">@gisellamercy</a>
-            </p>
-                <img src="Youtube_logo.png" width="30" height="30" alt="YouTube Logo">
-                <a href="https://www.youtube.com/@mercygisella3037">Mercy Gisella</a>
-            </p>
+        <!-- Aside Section -->
+        <div class="asideRN bg-[#31634b] text-white-700 p-4 shadow-lg">
+            <div class="content-box mb-6">
+                <img src="merryChrismast.jpg" alt="icon" class="responsive-img mx-auto">
+                <p class="mt-7 text-white">
+                    <center class="text-white">have a good holiday, everyone! :)</center>
+                </p>
             </div>
-            <br> 
-            <br>
-            <br>
-            <div class="content-box">
-                <h3>University Website</h3>
-                    <a href="https://fti.unai.edu">FTI UNAI</a>
-                    <br>
-                    <br>
-                    <a href="https://unai.edu">UNAI</a>
-                    <br>
-            </div>
-            <br>
-            <br>
-            <br> 
-            <div class="content-box">
-            <h3>Favorites Website</h3>
-                <img src="pinterest.jpeg" width="30" height="30" alt="Pinterest Logo">
-                <a href=https://id.pinterest.com>Pinterest</a>
-                <br>
-                <br> <img src="notion.jpeg" width="30" height="30" alt="Notion Logo">
-                <a href="https://www.notion.so">Notion</a>
-                <br>
-                <br> <img src="spotify.jpeg" width="30" height="30" alt="Spotify Logo">
-                <a href="https://open.spotify.com">Spotify</a>
-            </div>   
         </div>
+    </div>
+        <!-- Footer -->
+        <footer class="bg-[#530c18] text-white text-center py-4">
+            <p>&copy; 2024 Gisella Mercy Waworuntu. All rights reserved.</p>
+          </footer>
 </body>
-</head>
 </html>
